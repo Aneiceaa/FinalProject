@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nei's all girl gym</title>
+<link href="vvlayout.css" rel="stylesheet" />
+<link href="events.css" rel="stylesheet" />
+</head>
+<style>
+body {
+background-image: url("header.png");
+}
+</style>
+<body>
+<header>
+<div class="container">
+<img src="logo.png" alt="header" style="width:100%;">
+</div>
+</header>
+<div id="navbar">
+  <a href="home.html">About us</a>
+  <a href="registration.html">Membership</a>
+  <a href="events.html">Events</a>
+</div>
+
+
+<h1>June 2024</h1>
+<p style="color:white";>Free daily events for all members</a>
+<ul>
+	<li><time datetime="2025-06-01">1</time>Outdoor Yoga Class</li>
+	<li><time datetime="2025-06-02">2</time>Beginner Hip-Hop Class</li>
+	<li><time datetime="2025-06-03">3</time>Water Aerobics</li>
+	<li><time datetime="2025-06-04">4</time>HIIT Bootcamp</li>
+	<li><time datetime="2025-06-05">5</time>Boxing Class</li>
+	<li><time datetime="2025-06-06">6</time>Free Fruit Funday</li>
+	<li><time datetime="2025-06-07">7</time>Salsa Dance Class</li>
+	<li><time datetime="2025-06-08">8</time>Outdoor Yoga Class</li>
+	<li><time datetime="2025-06-09">9</time>Senior Stretch</li>
+	<li><time datetime="2025-06-10">10</time>HIIT Bootcamp</li>
+	<li><time datetime="2025-06-11">11</time>Rock Climbing</li>
+	<li><time datetime="2025-06-12">12</time>Boxing Class</li>
+	<li><time datetime="2025-06-13">13</time>Free Fruit Funday</li>
+	<li><time datetime="2025-06-14">14</time>HIIT Bootcamp</li>
+	<li><time datetime="2025-06-15">15</time>Outdoor Yoga Class</li>
+	<li><time datetime="2025-06-16">16</time>Rock Climbing</li>
+	<li><time datetime="2025-06-17">17</time>Group Hike</li>
+	<li><time datetime="2025-06-18">18</time>Marathon Preperation</li>
+	<li><time datetime="2025-06-18">19</time>Juneteenth Celebration</li>
+	<li><time datetime="2025-06-20">20</time>Free Fruit Funday</li>
+	<li><time datetime="2025-06-21">21</time>Boxing Class</li>
+	<li><time datetime="2025-06-22">22</time>Outdoor Yoga Class</li>
+	<li><time datetime="2025-06-23">23</time>Salsa Dance Class</li>
+	<li><time datetime="2025-06-24">24</time>Zumba</li>
+	<li><time datetime="2025-06-25">25</time>Senior Stretch</li>
+	<li><time datetime="2025-06-26">26</time>HIIT Bootcamp</li>
+	<li><time datetime="2025-06-27">27</time>Free Fruit Funday</li>
+	<li><time datetime="2025-06-28">28</time>Pride Month Celebration</li>
+</ul>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const currentDate = new Date();
+    const currentMonth = currentDate.getMonth();
+    const currentYear = currentDate.getFullYear();
+
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"];
+
+    const calendar = document.getElementById("calendar");
+    const monthYearHeader = document.getElementById("monthYear");
+
+    // Function to generate the calendar for a given month and year
+    function generateCalendar(month, year) {
+        calendar.innerHTML = ""; // Clear the calendar
+
+        monthYearHeader.textContent = `${monthNames[month]} ${year}`;
+
+        const numDays = new Date(year, month + 1, 0).getDate(); // Get the number of days in the month
+        const firstDayIndex = new Date(year, month, 1).getDay(); // Get the index of the first day
+
+        // Loop to create calendar days
+        for (let i = 1; i <= numDays; i++) {
+            const li = document.createElement("li");
+            const time = document.createElement("time");
+            time.textContent = i;
+            li.appendChild(time);
+            calendar.appendChild(li);
+            
+            // Highlight the current date
+            if (i === currentDate.getDate() && month === currentMonth && year === currentYear) {
+                li.classList.add("highlight");
+            }
+
+            // Add click event listener to each date
+            li.addEventListener("click", function() {
+                alert(`You clicked on ${monthNames[month]} ${i}, ${year}`);
+                // You can add more functionality here, like displaying additional information
+            });
+        }
+    }
+
+    // Initial generation of calendar for the current month
+    generateCalendar(currentMonth, currentYear);
+
+    // Example: Add navigation functionality to switch between months
+    document.getElementById("prevMonth").addEventListener("click", function() {
+        currentMonth--;
+        if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+        }
+        generateCalendar(currentMonth, currentYear);
+    });
+
+    document.getElementById("nextMonth").addEventListener("click", function() {
+        currentMonth++;
+        if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+        }
+        generateCalendar(currentMonth, currentYear);
+    });
+});
+</script>
+</body>
+</html>

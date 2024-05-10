@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+/* header styles */
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+  float: left;
+  margin-top: 50px;
+  width: 100%;
+
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+header img {
+    height: 150px; 
+    width: auto; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+
+.main {
+  margin-left: 140px; /* Same width as the sidebar + left position in px */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+body {
+   background-color: #fccfea;
+   position: relative;
+   min-height: 100vh;
+   margin: 0;
+   padding-bottom: 100px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* slideshow layout */ 
+
+.slideshow-container {
+  max-width: 600px;
+  height: 165px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.mySlides img {
+  height: 130px;
+  width: 100%;
+}
+.text {
+  color: #f2f2f2;
+  font-size: 20px;
+  padding: 8px 12px;
+  bottom: 6px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  top: 0;
+  float: right;
+}
+
+h2 {
+  text-shadow: 2px 2px 5px #ff99c7;
+  font-size: 30px;
+}
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+
+
+}
+
+article {
+  background-color: #000;
+  font-size: 16px;
+  color: #e03691;
+  padding: 30px;
+  margin: auto;
+  margin-top: 20px;
+  position: absolute;
+  width: 90%;
+  height: 52%;
+  text-align: center;
+  top: 48%;
+  bottom: 50px;
+  z-index: 1;
+  
+}
+.parallax {
+    background-image: url("gym4.png");
+
+  /* Set a specific height */
+  min-height: 400px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center, right bottom;
+  background-repeat: no-repeat;
+  background-size: cover, contain, auto;
+}
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #000;
+  background: linear-gradient(to bottom, #000, #e03691);
+  color: white;
+  text-align: center;
+  font-size: 0.9em;
+}
+footer nav ul {
+   float: left;
+   padding: 30px;
+   width: 25%;
+}
+
+footer nav ul a {
+   color: white;
+}
+
+footer nav ul a:hover {
+   text-decoration: underline;
+}
+
+
+footer::after {
+   display: table;
+   content: "";
+   clear: both;
+}
+
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
